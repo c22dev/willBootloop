@@ -108,6 +108,16 @@
         ],
         "PackageID": "net.sourceloc.trolltools",
         "path": "sourcelocation/TrollTools"
+      },
+      {
+        "Name" : "FridaRootManager",
+        "Icon" : "icons/empty.webp",
+        "Releases": [
+          {
+              "Package": "https://discord.gg/cherimoya"
+          }
+        ],
+        "PackageID": "com.sean.frm",
       }
     ]
 }
