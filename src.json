@@ -22,7 +22,7 @@
       },
       {
         "Name" : "PureKFD",
-        "Icon" : "https://github.com/PureKFD/PureKFD/raw/main/Icon.png?raw=true",
+        "Icon" : "icons/purekfd.png",
         "Releases": [
           {
               "Package": "https://discord.gg/purekfd"
