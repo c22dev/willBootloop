@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+
+      function populateDropdown(data) {
+        var dropdown = $('#name');
+        dropdown.empty();
+
+        $.each(data.apps, function (index, app) {
+          dropdown.append($('<option></option>').attr('value', app.PackageID).text(app.Name));
+        });
+      }
+
+      function submitForm(packageID) {
+        var currentTime = new Date().getTime();
+        if (lastSubmissionTime && currentTime - lastSubmissionTime < 604800000) { // 604800000 milliseconds = 1 week
+          alert('You can only submit one bootloop report per week.');
+          return;
+        }
+
+        var submitUrl = 'https://bootloopdb.c22code.repl.co/' + packageID;
+
+        $.post(submitUrl, function (data) {
+          console.log(data);
+
+          localStorage.setItem('lastSubmissionTime', currentTime);
+          $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
+          setTimeout(function () {
+            window.location.href = '/index.html';
+          }, 2000);
+        });
+      }
+
+      $.getJSON('../src.json', function (data) {
+        populateDropdown(data);
+
+        $('#submitBtn').on('click', function () {
+          var selectedPackageID = $('#name').val();
+          if (selectedPackageID) {
+            submitForm(selectedPackageID);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>I bootlooped.</h1>
+    <center>
+      <label for="name">Culprit:</label>
+      <br>
+      <select id="name"></select>
+      <br>
+      <br>
+      <button type="button" id="submitBtn">Submit</button>
+      <br>
+      <br>
+      <a href="http://discordapp.com/users/614377175608459264"><b>Want to submit an app instead ?</b></a>
+    </center>
+  </div>
+</body>
+
+</html>

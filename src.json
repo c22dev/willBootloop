@@ -1,0 +1,104 @@
+{
+    "apps": [
+      {
+          "Name": "Misaka",
+          "Icon": "icons/Epos_misaka_pink_p1-modified.png",
+          "Releases": [
+              {
+                  "Package": "https://github.com/straight-tamago/misaka/releases/latest"
+              }
+          ],
+          "PackageID": "com.straight-tamago.misakaRS"
+      },
+      {
+        "Name" : "Picasso",
+        "Icon" : "https://raw.githubusercontent.com/sourcelocation/Picasso-v3/main/assets/rounded.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/sourcelocation/Picasso-v3/releases/latest"
+          }
+        ],
+        "PackageID": "net.sourceloc.picasso"
+      },
+      {
+        "Name" : "PureKFD",
+        "Icon" : "https://github.com/PureKFD/PureKFD/raw/main/Icon.png?raw=true",
+        "Releases": [
+          {
+              "Package": "https://discord.gg/purekfd"
+          }
+        ],
+        "PackageID": "com.purekfd.purekfd"
+      },
+      {
+        "Name" : "Cluckabunga",
+        "Icon" : "icons/IMG_2137-modified.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/leminlimez/Cluckabunga/releases/latest"
+          }
+        ],
+        "PackageID": "com.leminlimez.Cluckabunga"
+      },
+      {
+        "Name" : "NekoJB",
+        "Icon" : "icons/neko.png",
+        "Releases": [
+          {
+              "Package": "https://nekojb.hhls.xyz"
+          }
+        ],
+        "PackageID": "com.neko.jb"
+      },
+      {
+        "Name" : "Meowbreak2",
+        "Icon" : "icons/empty.webp",
+        "Releases": [
+          {
+              "Package": "https://kok3shidoll.github.io/download/secret/meowbrek2.txt"
+          }
+        ],
+        "PackageID": "com.meow.break"
+      },
+      {
+        "Name" : "Cowabunga Lite",
+        "Icon" : "https://github.com/leminlimez/CowabungaLite/raw/2d9a503ad4f60b3cbbb5736cfbaa39b833c85c76/Cowabunga%20Lite/Assets.xcassets/AppIcon.appiconset/128-icon.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/leminlimez/CowabungaLite/releases/latest"
+          }
+        ],
+        "PackageID": "com.leminlimez.cowalite"
+      },
+      {
+        "Name" : "Cowabunga",
+        "Icon" : "https://user-images.githubusercontent.com/52459150/215552092-9dc1e029-da35-43da-867f-17279e3dc180.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/leminlimez/Cowabunga/releases/latest"
+          }
+        ],
+        "PackageID": "com.leminlimez.Cowabunga"
+      },
+      {
+        "Name" : "AppCommander",
+        "Icon" : "icons/appcommander v3-modified.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/leminlimez/Cowabunga/releases/latest"
+          }
+        ],
+        "PackageID": "com.bomberfish.appcommander"
+      },
+      {
+        "Name" : "TrollTools",
+        "Icon" : "icons/TrollUtils-modified.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/sourcelocation/TrollTools/releases/latest"
+          }
+        ],
+        "PackageID": "net.sourceloc.trolltools"
+      }
+    ]
+}
