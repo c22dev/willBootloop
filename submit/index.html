@@ -47,14 +47,10 @@ $(document).ready(function () {
         localStorage.setItem('lastSubmissionTime', currentTime);
         hideLoadingOverlay();
         
-        if (data.status === 403) {
-          alert('You can only submit one bootloop report per week.');
-        } else {
-          $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
-          setTimeout(function () {
-            window.location.href = '../index.html';
-          }, 2000);
-        }
+        $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
+        setTimeout(function () {
+          window.location.href = '../index.html';
+        }, 2000);
       },
       error: function (xhr, textStatus, errorThrown) {
         if (xhr.status === 403) {
@@ -78,6 +74,7 @@ $(document).ready(function () {
     });
   });
 });
+
   </script>
 </head>
 
