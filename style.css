@@ -72,6 +72,9 @@ body {
 
 
 @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
   body {
     background: rgb(18, 18, 18);
     ;
