@@ -8,7 +8,8 @@
                   "Package": "https://github.com/straight-tamago/misaka/releases/latest"
               }
           ],
-          "PackageID": "com.straight-tamago.misakaRS"
+          "PackageID": "com.straight-tamago.misakaRS",
+          "repo" : "straight-tamago/misaka"
       },
       {
         "Name" : "Picasso",
@@ -18,17 +19,19 @@
               "Package": "https://github.com/sourcelocation/Picasso-v3/releases/latest"
           }
         ],
-        "PackageID": "net.sourceloc.picasso"
+        "PackageID": "net.sourceloc.picasso",
+        "repo" : "sourcelocation/Picasso-v3"
       },
       {
         "Name" : "PureKFD",
-        "Icon" : "icons/purekfd.png",
+        "Icon" : "https://github.com/PureKFD/PureKFD/raw/main/Icon.png?raw=true",
         "Releases": [
           {
               "Package": "https://discord.gg/purekfd"
           }
         ],
-        "PackageID": "com.purekfd.purekfd"
+        "PackageID": "com.purekfd.purekfd",
+        "repo" : "PureKFD/PureKFD"
       },
       {
         "Name" : "Cluckabunga",
@@ -38,7 +41,8 @@
               "Package": "https://github.com/leminlimez/Cluckabunga/releases/latest"
           }
         ],
-        "PackageID": "com.leminlimez.Cluckabunga"
+        "PackageID": "com.leminlimez.Cluckabunga",
+        "repo" : "leminlimez/Cluckabunga"
       },
       {
         "Name" : "NekoJB",
@@ -68,7 +72,8 @@
               "Package": "https://github.com/leminlimez/CowabungaLite/releases/latest"
           }
         ],
-        "PackageID": "com.leminlimez.cowalite"
+        "PackageID": "com.leminlimez.cowalite",
+        "repo": "leminlimez/CowabungaLite"
       },
       {
         "Name" : "Cowabunga",
@@ -78,17 +83,19 @@
               "Package": "https://github.com/leminlimez/Cowabunga/releases/latest"
           }
         ],
-        "PackageID": "com.leminlimez.Cowabunga"
+        "PackageID": "com.leminlimez.Cowabunga",
+        "repo": "leminlimez/Cowabunga"
       },
       {
         "Name" : "AppCommander",
         "Icon" : "icons/appcommander v3-modified.png",
         "Releases": [
           {
-              "Package": "https://github.com/leminlimez/Cowabunga/releases/latest"
+              "Package": "https://github.com/BomberFish/AppCommander/releases/latest"
           }
         ],
-        "PackageID": "com.bomberfish.appcommander"
+        "PackageID": "com.bomberfish.appcommander",
+        "repo": "BomberFish/AppCommander-legacy"
       },
       {
         "Name" : "TrollTools",
@@ -98,17 +105,8 @@
               "Package": "https://github.com/sourcelocation/TrollTools/releases/latest"
           }
         ],
-        "PackageID": "net.sourceloc.trolltools"
-      },
-      {
-        "Name" : "FridaRootManager",
-        "Icon" : "icons/empty.webp",
-        "Releases": [
-          {
-              "Package": "https://discord.gg/cherimoya"
-          }
-        ],
-        "PackageID": "com.sean.frm"
+        "PackageID": "net.sourceloc.trolltools",
+        "path": "sourcelocation/TrollTools"
       }
     ]
 }
