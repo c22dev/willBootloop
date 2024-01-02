@@ -16,6 +16,7 @@ fetch(url)
             let apiUrl = `https://api.github.com/repos/${repo}/releases/latest`;
 
             if (item.Name === "NekoJB") {
+              console.log('nekojb')
               apiUrl = "https://istillhatephp.c22code.repl.co";
             }
 
