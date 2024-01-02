@@ -27,13 +27,13 @@ fetch(url)
           const viewsCount = parseInt(data, 10);
           const percentage = (viewsCount / downloadCount) * 100;
 
-          viewCountEl.textContent = `Percentage of Views: ${percentage.toFixed(2)}%`;
+          viewCountEl.textContent = `Probability: ${percentage.toFixed(2)}%`;
         } else {
           const url = `https://bootloopdb.c22code.repl.co/${PackageID}`;
           const response = await fetch(url);
           const data = await response.text();
           const viewsCount = parseInt(data, 10);
-          viewCountEl.textContent = `Views: ${viewsCount}`;
+          viewCountEl.textContent = `Bootloops: ${viewsCount}`;
         }
       }
 
