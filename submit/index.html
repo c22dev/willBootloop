@@ -9,7 +9,15 @@
   <script>
     $(document).ready(function () {
       var lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+      
+      function showLoadingOverlay() {
+        $('#loadingOverlay').show();
+      }
 
+      function hideLoadingOverlay() {
+        $('#loadingOverlay').hide();
+      }
+      
       function populateDropdown(data) {
         var dropdown = $('#name');
         dropdown.empty();
@@ -20,6 +28,7 @@
       }
 
       function submitForm(packageID) {
+        showLoadingOverlay(); 
         var currentTime = new Date().getTime();
         if (lastSubmissionTime && currentTime - lastSubmissionTime < 604800000) { // 604800000 milliseconds = 1 week
           alert('You can only submit one bootloop report per week.');
@@ -32,6 +41,7 @@
           console.log(data);
 
           localStorage.setItem('lastSubmissionTime', currentTime);
+          hideLoadingOverlay();
           $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
           setTimeout(function () {
             window.location.href = '../index.html';
@@ -63,6 +73,22 @@
       <br>
       <br>
       <button type="button" id="submitBtn">Submit</button>
+      <div class="overlay" id="loadingOverlay">
+        <div class="spinner center">
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+          <div class="spinner-blade"></div>
+        </div>
+      </div>
       <br>
       <br>
       <a href="https://github.com/c22dev/willBootloop#contributing-to-app-database"><b>Want to submit an app instead ?</b></a>
