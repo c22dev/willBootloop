@@ -53,6 +53,7 @@
           }
         ],
         "PackageID": "com.neko.jb"
+        "repo": "specialpath/customapi"
       },
       {
         "Name" : "Meowbreak2",
