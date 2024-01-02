@@ -16,7 +16,6 @@ fetch(url)
             let apiUrl = `https://api.github.com/repos/${repo}/releases/latest`;
 
             if (item.Name === "NekoJB") {
-              console.log('nekojb')
               apiUrl = "https://istillhatephp.c22code.repl.co";
             }
 
@@ -40,6 +39,7 @@ fetch(url)
 
             if (item.Name === "NekoJB") {
               const probability = viewsCount * 100;
+              console.log(probabilty);
               viewCountEl.textContent = `Probability: ${probability.toFixed(2)}%`;
             } else {
               const percentage = (viewsCount / downloadCount) * 100;
