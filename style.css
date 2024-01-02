@@ -94,6 +94,10 @@ body {
   :root {
     --status-bar-background-color: #13556f;
   }
+  #gitIcon img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -131,4 +135,19 @@ body {
 
 #plusIcon img {
   width: 60%;
+}
+
+#gitIcon {
+  position: fixed;
+  right: 60px;
+  width: 30px;
+  height: 30px;
+  padding-top:2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gitIcon img {
+  width: 100%;
 }
