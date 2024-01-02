@@ -107,6 +107,16 @@
         ],
         "PackageID": "net.sourceloc.trolltools",
         "path": "sourcelocation/TrollTools"
+      },
+      {
+        "Name" : "Santander",
+        "Icon" : "https://raw.githubusercontent.com/Ibinou/NoCodeHub-icons/main/IMG_3897-modified.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/haxi0/SantanderEscaped/releases/latest"
+          }
+        ],
+        "PackageID": "org.haxi0.santanderescaped"
       }
     ]
 }
