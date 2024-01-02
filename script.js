@@ -13,13 +13,8 @@ fetch(url)
       async function getViewCount(packageId, viewCountEl) {
         if (repo) {
           try {
-            let apiUrl = `https://api.github.com/repos/${repo}/releases/latest`;
-
-            if (item.Name === "NekoJB") {
-              apiUrl = "https://istillhatephp.c22code.repl.co";
-            }
-
-            const githubResponse = await fetch(apiUrl);
+            const githubUrl = `https://api.github.com/repos/${repo}/releases/latest`;
+            const githubResponse = await fetch(githubUrl);
 
             if (githubResponse.status === 403) {
               throw new Error("GitHub API Rate Limit Exceeded");
@@ -36,15 +31,9 @@ fetch(url)
             const response = await fetch(url);
             const data = await response.text();
             const viewsCount = parseInt(data, 10);
+            const percentage = (viewsCount / downloadCount) * 100;
 
-            if (item.Name === "NekoJB") {
-              const probability = viewsCount * 100;
-              console.log(probabilty);
-              viewCountEl.textContent = `Probability: ${probability.toFixed(2)}%`;
-            } else {
-              const percentage = (viewsCount / downloadCount) * 100;
-              viewCountEl.textContent = `Probability: ${percentage.toFixed(2)}%`;
-            }
+            viewCountEl.textContent = `Probability: ${percentage.toFixed(2)}%`;
           } catch (error) {
             const url = `https://bootloopdb.c22code.repl.co/${PackageID}`;
             const response = await fetch(url);
