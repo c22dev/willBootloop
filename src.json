@@ -107,7 +107,7 @@
           }
         ],
         "PackageID": "net.sourceloc.trolltools",
-        "path": "sourcelocation/TrollTools"
+        "repo": "sourcelocation/TrollTools"
       },
       {
         "Name" : "FridaRootManager",
@@ -118,6 +118,17 @@
           }
         ],
         "PackageID": "com.sean.frm"
+      },
+      {
+        "Name" : "TrollBox",
+        "Icon" : "https://camo.githubusercontent.com/9f9eb0dfd3300eaaf29cf6f94a0fb88f6b32228b8fdf5fa72739cca19b553ff5/68747470733a2f2f692e6962622e636f2f62354d70776d4b2f556e7469746c65642d6d6f6469666965642e706e67",
+        "Releases": [
+          {
+              "Package": "https://github.com/c22dev/TrollBox/releases/latest"
+          }
+        ],
+        "PackageID": "live.cclerc.trollbox"
+        "repo": "c22dev/TrollBox"
       }
     ]
 }
