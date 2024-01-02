@@ -142,7 +142,7 @@ body {
   right: 60px;
   width: 30px;
   height: 30px;
-  padding-top:2px;
+  padding-top:1.2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,3 +151,4 @@ body {
 #gitIcon img {
   width: 100%;
 }
+
