@@ -127,7 +127,7 @@
               "Package": "https://github.com/c22dev/TrollBox/releases/latest"
           }
         ],
-        "PackageID": "live.cclerc.trollbox"
+        "PackageID": "live.cclerc.trollbox",
         "repo": "c22dev/TrollBox"
       }
     ]
