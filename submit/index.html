@@ -8,59 +8,64 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
     $(document).ready(function () {
-      var lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
-      
-      function showLoadingOverlay() {
-        $('#loadingOverlay').show();
-      }
+  var lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
 
-      function hideLoadingOverlay() {
-        $('#loadingOverlay').hide();
-      }
-      
-      function populateDropdown(data) {
-        var dropdown = $('#name');
-        dropdown.empty();
+  function showLoadingOverlay() {
+    $('#loadingOverlay').show();
+  }
 
-        $.each(data.apps, function (index, app) {
-          dropdown.append($('<option></option>').attr('value', app.PackageID).text(app.Name));
-        });
-      }
+  function hideLoadingOverlay() {
+    $('#loadingOverlay').hide();
+  }
 
-      function submitForm(packageID) {
-        var currentTime = new Date().getTime();
-        if (lastSubmissionTime && currentTime - lastSubmissionTime < 604800000) { // 604800000 milliseconds = 1 week
-          alert('You can only submit one bootloop report per week.');
-          return;
-        } else {
-          showLoadingOverlay()
-        }
+  function populateDropdown(data) {
+    var dropdown = $('#name');
+    dropdown.empty();
 
-        var submitUrl = 'https://bootloopdb.c22code.repl.co/' + packageID;
-
-        $.post(submitUrl, function (data) {
-          console.log(data);
-
-          localStorage.setItem('lastSubmissionTime', currentTime);
-          hideLoadingOverlay();
-          $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
-          setTimeout(function () {
-            window.location.href = '../index.html';
-          }, 2000);
-        });
-      }
-
-      $.getJSON('../src.json', function (data) {
-        populateDropdown(data);
-
-        $('#submitBtn').on('click', function () {
-          var selectedPackageID = $('#name').val();
-          if (selectedPackageID) {
-            submitForm(selectedPackageID);
-          }
-        });
-      });
+    $.each(data.apps, function (index, app) {
+      dropdown.append($('<option></option>').attr('value', app.PackageID).text(app.Name));
     });
+  }
+
+  function submitForm(packageID) {
+    var currentTime = new Date().getTime();
+    if (lastSubmissionTime && currentTime - lastSubmissionTime < 604800000) { // 604800000 milliseconds = 1 week
+      alert('You can only submit one bootloop report per week.');
+      return;
+    } else {
+      showLoadingOverlay();
+    }
+
+    var submitUrl = 'https://bootloopdb.c22code.repl.co/' + packageID;
+
+    $.post(submitUrl, function (data) {
+      console.log(data);
+
+      localStorage.setItem('lastSubmissionTime', currentTime);
+      hideLoadingOverlay();
+
+      if (data.toLowerCase().includes('blacklisted')) {
+        alert('You can only submit one bootloop report per week.');
+      } else {
+        $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
+        setTimeout(function () {
+          window.location.href = '../index.html';
+        }, 2000);
+      }
+    });
+  }
+
+  $.getJSON('../src.json', function (data) {
+    populateDropdown(data);
+
+    $('#submitBtn').on('click', function () {
+      var selectedPackageID = $('#name').val();
+      if (selectedPackageID) {
+        submitForm(selectedPackageID);
+      }
+    });
+  });
+});
   </script>
 </head>
 
