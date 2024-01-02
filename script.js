@@ -15,6 +15,11 @@ fetch(url)
           try {
             const githubUrl = `https://api.github.com/repos/${repo}/releases/latest`;
             const githubResponse = await fetch(githubUrl);
+
+            if (githubResponse.status === 403) {
+              throw new Error("GitHub API Rate Limit Exceeded");
+            }
+
             const githubData = await githubResponse.json();
 
             const downloadCount = githubData.assets.reduce(
