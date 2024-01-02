@@ -12,22 +12,30 @@ fetch(url)
 
       async function getViewCount(packageId, viewCountEl) {
         if (repo) {
-          const githubUrl = `https://api.github.com/repos/${repo}/releases/latest`;
-          const githubResponse = await fetch(githubUrl);
-          const githubData = await githubResponse.json();
+          try {
+            const githubUrl = `https://api.github.com/repos/${repo}/releases/latest`;
+            const githubResponse = await fetch(githubUrl);
+            const githubData = await githubResponse.json();
 
-          const downloadCount = githubData.assets.reduce(
-            (total, asset) => total + asset.download_count,
-            0
-          );
+            const downloadCount = githubData.assets.reduce(
+              (total, asset) => total + asset.download_count,
+              0
+            );
 
-          const url = `https://bootloopdb.c22code.repl.co/${PackageID}`;
-          const response = await fetch(url);
-          const data = await response.text();
-          const viewsCount = parseInt(data, 10);
-          const percentage = (viewsCount / downloadCount) * 100;
+            const url = `https://bootloopdb.c22code.repl.co/${PackageID}`;
+            const response = await fetch(url);
+            const data = await response.text();
+            const viewsCount = parseInt(data, 10);
+            const percentage = (viewsCount / downloadCount) * 100;
 
-          viewCountEl.textContent = `Probability: ${percentage.toFixed(2)}%`;
+            viewCountEl.textContent = `Probability: ${percentage.toFixed(2)}%`;
+          } catch (error) {
+            const url = `https://bootloopdb.c22code.repl.co/${PackageID}`;
+            const response = await fetch(url);
+            const data = await response.text();
+            const viewsCount = parseInt(data, 10);
+            viewCountEl.textContent = `Bootloops: ${viewsCount}`;
+          }
         } else {
           const url = `https://bootloopdb.c22code.repl.co/${PackageID}`;
           const response = await fetch(url);
