@@ -7,7 +7,7 @@
   <link href="style.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script>
-    $(document).ready(function () {
+$(document).ready(function () {
   var lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
 
   function showLoadingOverlay() {
@@ -38,19 +38,31 @@
 
     var submitUrl = 'https://bootloopdb.c22code.repl.co/' + packageID;
 
-    $.post(submitUrl, function (data) {
-      console.log(data);
+    $.ajax({
+      type: 'POST',
+      url: submitUrl,
+      success: function (data) {
+        console.log(data);
 
-      localStorage.setItem('lastSubmissionTime', currentTime);
-      hideLoadingOverlay();
-
-      if (data.toLowerCase().includes('blacklisted')) {
-        alert('You can only submit one bootloop report per week.');
-      } else {
-        $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
-        setTimeout(function () {
-          window.location.href = '../index.html';
-        }, 2000);
+        localStorage.setItem('lastSubmissionTime', currentTime);
+        hideLoadingOverlay();
+        
+        if (data.status === 403) {
+          alert('You can only submit one bootloop report per week.');
+        } else {
+          $('#submitBtn').after('<p>Bootloop reported successfully!</p>');
+          setTimeout(function () {
+            window.location.href = '../index.html';
+          }, 2000);
+        }
+      },
+      error: function (xhr, textStatus, errorThrown) {
+        if (xhr.status === 403) {
+          alert('You can only submit one bootloop report per week.');
+        } else {
+          console.error('Error:', textStatus, errorThrown);
+        }
+        hideLoadingOverlay();
       }
     });
   }
