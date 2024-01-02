@@ -28,11 +28,12 @@
       }
 
       function submitForm(packageID) {
-        showLoadingOverlay(); 
         var currentTime = new Date().getTime();
         if (lastSubmissionTime && currentTime - lastSubmissionTime < 604800000) { // 604800000 milliseconds = 1 week
           alert('You can only submit one bootloop report per week.');
           return;
+        } else {
+          showLoadingOverlay()
         }
 
         var submitUrl = 'https://bootloopdb.c22code.repl.co/' + packageID;
