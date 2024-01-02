@@ -52,7 +52,7 @@
               "Package": "https://nekojb.hhls.xyz"
           }
         ],
-        "PackageID": "com.neko.jb"
+        "PackageID": "com.neko.jb",
         "repo": "specialpath/customapi"
       },
       {
