@@ -45,27 +45,6 @@
         "repo" : "leminlimez/Cluckabunga"
       },
       {
-        "Name" : "NekoJB",
-        "Icon" : "icons/neko.png",
-        "Releases": [
-          {
-              "Package": "https://nekojb.hhls.xyz"
-          }
-        ],
-        "PackageID": "com.neko.jb",
-        "repo": "specialpath/customapi"
-      },
-      {
-        "Name" : "Meowbreak2",
-        "Icon" : "icons/empty.webp",
-        "Releases": [
-          {
-              "Package": "https://kok3shidoll.github.io/download/secret/meowbrek2.txt"
-          }
-        ],
-        "PackageID": "com.meow.break"
-      },
-      {
         "Name" : "Cowabunga Lite",
         "Icon" : "https://github.com/leminlimez/CowabungaLite/raw/2d9a503ad4f60b3cbbb5736cfbaa39b833c85c76/Cowabunga%20Lite/Assets.xcassets/AppIcon.appiconset/128-icon.png",
         "Releases": [
