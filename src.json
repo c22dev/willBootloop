@@ -129,6 +129,17 @@
         ],
         "PackageID": "live.cclerc.trollbox",
         "repo": "c22dev/TrollBox"
+      },
+      {
+        "Name" : "TrollBoard Reborn",
+        "Icon" : "icons/TrollBoard-modified.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/haxi0/TrollBoard-Reborn"
+          }
+        ],
+        "PackageID": "com.haxi0.trollboardreborn",
+        "repo": "haxi0/TrollBoard-Reborn"
       }
     ]
 }
