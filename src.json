@@ -89,7 +89,7 @@
         "repo": "sourcelocation/TrollTools"
       },
       {
-        "Name" : "FRM",
+        "Name" : "FridaRootManager",
         "Icon" : "icons/empty.webp",
         "Releases": [
           {
