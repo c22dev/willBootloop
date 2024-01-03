@@ -135,11 +135,33 @@
         "Icon" : "icons/TrollBoard-modified.png",
         "Releases": [
           {
-              "Package": "https://github.com/haxi0/TrollBoard-Reborn"
+              "Package": "https://github.com/haxi0/TrollBoard-Reborn/releases/latest"
           }
         ],
         "PackageID": "com.haxi0.trollboardreborn",
         "repo": "haxi0/TrollBoard-Reborn"
+      },
+      {
+        "Name" : "Bootstrap",
+        "Icon" : "icons/roothide.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/RootHide/Bootstrap/releases/latest"
+          }
+        ],
+        "PackageID": "com.roothide.bootstrap",
+        "repo": "RootHide/Bootstrap"
+      },
+      {
+        "Name" : "Mugunghwa",
+        "Icon" : "icons/mug.png",
+        "Releases": [
+          {
+              "Package": "https://github.com/s8ngyu/Mugunghwa/releases/latest"
+          }
+        ],
+        "PackageID": "com.sngyu.mugunghwa",
+        "repo": "s8ngyu/Mugunghwa"
       }
     ]
 }
