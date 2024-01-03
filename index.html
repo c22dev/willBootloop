@@ -1,46 +1,49 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>willBootloop</title>
-  <link href="style.css" rel="stylesheet" />
-  <meta charset="utf-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description"
-    content="willBootloop is a global database of jailed tools and the number of reported bootloops per-app.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>willBootloop</title>
+    <style>    
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .credit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .credit-item {
+            margin: 10px 0;
+        }
+
+        .category-heading {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
-
 <body>
-  <a href="submit">
-    <div id="plusIcon">
-      <img src="plus-icon" alt="Plus Icon">
+    <div class="content">
+    <h1>End of support</h1>
+    <br>
+    <p>Well, this didn't lasted long... </p>
+    <div class="category-heading">Reasons</div>
+    <ul class="credit-list">
+        <li class="credit-item"><strong>Bootloops verification </strong> - Bootloops reports simply cannot be verified. They might be true or might be false.</li>
+        <li class="credit-item"><strong>Influence on dev's work</strong> - Exposing values that might have been resolved can influence dev's app success.</li>
+        <li class="credit-item"><strong>Future of this website</strong> - This website will be turned into a KFD/MDC/TrollStore library.</li>
+    </ul>
     </div>
-  </a>
-  <br>
-  <br>
-  <br>
-  <center>
-    <div class="icnn">
-    <img src="icn" width=5%>
-    </div>
-    <h1>willBootloop?</h1>
-    <p>The probability your phone will bootloop based on user reports.</p>
-    <br>
-    <br>
-    <br>
-    <div id="boxes"></div>
-  </center>
-  <script src="script.js"></script>
-  <center>
-    <br>
-    <i style="font-size: 11px;">"A bootloop is when an Apple device no longer boot after a reboot, instead remaining on the Apple logo permanently. Usually these are unfixable, and updating/restoring to a new iOS version is the only solution."</i>
-    <p style="font-size: 8px;">- whitetailani</p>
-    <br>
-    <p>Please note that the developers may have fixed the bugs causing bootloops through updates.</p>
-    <p>made by c22dev</p>
-    <a href="credits">Credits</a>
-  </center>
 </body>
-
 </html>
